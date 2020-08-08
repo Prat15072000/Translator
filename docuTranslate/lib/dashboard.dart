@@ -8,12 +8,29 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Document Translator'),
       ),
       body: SingleChildScrollView(
-        child: SafeArea(child: null),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                  child: ListView.builder(
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  Container(
+                    height: h / 5,
+                  );
+                },
+              ))
+            ],
+          ),
+        ),
       ),
     );
   }
