@@ -36,6 +36,11 @@ class _TextFileState extends State<TextFile> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        onPressed: () {},
+        child: Icon(Icons.g_translate, color: Colors.black, size: 30),
+      ),
     );
   }
 }

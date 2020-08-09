@@ -103,6 +103,11 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        onPressed: () {},
+        child: Icon(Icons.g_translate, color: Colors.black, size: 30),
+      ),
     );
   }
 }
