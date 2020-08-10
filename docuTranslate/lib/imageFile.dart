@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io' as Io;
 import 'package:http/http.dart' as http;
+import 'package:translator/translator.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -12,6 +13,16 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   bool upload = false;
   String text = '';
+
+  GoogleTranslator translator = GoogleTranslator();
+
+  textTranslate() {
+    translator.translate(text, to: "es").then((output) {
+      setState(() {
+        text = output.text;
+      });
+    });
+  }
 
   extractImage() async {
     // pick the image
@@ -105,7 +116,9 @@ class _DashboardState extends State<Dashboard> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          textTranslate();
+        },
         child: Icon(Icons.g_translate, color: Colors.black, size: 30),
       ),
     );
