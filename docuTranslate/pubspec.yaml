@@ -33,6 +33,9 @@ dependencies:
   read_pdf_text: 
   file_picker: 
   translator: ^0.1.5
+  pdf:
+  path_provider:
+  flutter_full_pdf_viewer: 
 
 
 dev_dependencies:
