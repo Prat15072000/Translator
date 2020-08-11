@@ -16,11 +16,19 @@ class _PdfFileState extends State<PdfFile> {
 
   bool _loading = false;
   bool _paginated = false;
+
+  exportPDF() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.picture_as_pdf),
+              onPressed: () {
+                exportPDF();
+              }),
           Padding(
             padding: const EdgeInsets.only(right: 50),
             child: Center(
