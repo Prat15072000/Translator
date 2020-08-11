@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:translator/translator.dart';
-import 'dart:async';
+import 'package:flutter_full_pdf_viewer/flutter_full_pdf_viewer.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart';
+import 'package:path/path.dart';
 
 class TextFile extends StatefulWidget {
   @override
@@ -22,8 +25,11 @@ class _TextFileState extends State<TextFile> {
   void initState() {
     getFileData();
     textTranslate();
+    exportPDF();
     super.initState();
   }
+
+  exportPDF() {}
 
   GoogleTranslator translator = GoogleTranslator();
 
@@ -42,6 +48,13 @@ class _TextFileState extends State<TextFile> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Text Extract'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.picture_as_pdf),
+              onPressed: () {
+                exportPDF();
+              })
+        ],
       ),
       body: SingleChildScrollView(
         child: SafeArea(
