@@ -24,6 +24,8 @@ class _DashboardState extends State<Dashboard> {
     });
   }
 
+  exportPDF() {}
+
   extractImage() async {
     // pick the image
 
@@ -63,6 +65,13 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Document Translator'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.picture_as_pdf),
+              onPressed: () {
+                exportPDF();
+              })
+        ],
       ),
       body: SingleChildScrollView(
         child: SafeArea(
